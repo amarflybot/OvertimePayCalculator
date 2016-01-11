@@ -10,6 +10,7 @@ public class Employee {
     private Double overtimePay;
     private Double carAllowance;
     private Integer employeeType;
+    private Division division;
 
     public String getName() {
         return name;
@@ -49,5 +50,13 @@ public class Employee {
 
     public void setEmployeeType(Integer employeeType) {
         this.employeeType = employeeType;
+    }
+
+    public Division getDivision() {
+        return division;
+    }
+
+    public void setDivision(Division division) {
+        this.division = division;
     }
 }

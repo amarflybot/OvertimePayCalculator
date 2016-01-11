@@ -8,7 +8,13 @@ import java.util.Set;
 public class Company {
 
     private String name;
-    private Set<Division> divisionSet;
+
+    public Company(String name) {
+        this.name = name;
+    }
+
+    public Company() {
+    }
 
     public String getName() {
         return name;
@@ -16,13 +22,5 @@ public class Company {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Set<Division> getDivisionSet() {
-        return divisionSet;
-    }
-
-    public void setDivisionSet(Set<Division> divisionSet) {
-        this.divisionSet = divisionSet;
     }
 }
