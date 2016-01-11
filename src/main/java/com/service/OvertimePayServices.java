@@ -2,7 +2,6 @@ package com.service;
 
 import com.factory.RuleFactory;
 import com.model.Employee;
-import com.model.Rule;
 
 /**
  * Created by kumarao on 11-01-2016.
