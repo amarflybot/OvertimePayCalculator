@@ -9,6 +9,7 @@ public class Rule {
     private Division division;
     private Double startWorkingHour;
     private Double endWorkingHour;
+    private Double employeeType;
 
     public Company getCompany() {
         return company;
@@ -40,5 +41,13 @@ public class Rule {
 
     public void setEndWorkingHour(Double endWorkingHour) {
         this.endWorkingHour = endWorkingHour;
+    }
+
+    public Double getEmployeeType() {
+        return employeeType;
+    }
+
+    public void setEmployeeType(Double employeeType) {
+        this.employeeType = employeeType;
     }
 }

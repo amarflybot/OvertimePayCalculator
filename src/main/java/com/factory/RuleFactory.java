@@ -20,27 +20,27 @@ public class RuleFactory {
 
     public RuleExecutor getRuleExecutorForEmployee(Employee employee) {
         //Get Rule for Employee
-        RuleExecutor rule = null;
-        if (employee.getEmployeeType().equals(1)) {
+        RuleExecutor ruleExecutor = null;
+        List<Rule> allRules = ruleService.getAllRules();
+        for(final Rule rule1 : allRules){
+        if (employee.getEmployeeType().equals(rule1.getEmployeeType())) {
             // For Permanent Employee
-            if (employee.getDivision().getCompany().getName().equals("CompanyA")) {
-                List<Rule> allRules = ruleService.getAllRules();
-                for(Rule rule1 : allRules){
+            if (employee.getDivision().getCompany().getName().equals(rule1.getCompany().getName())) {
                     if(employee.getOvertimePay() > rule1.getStartWorkingHour() && employee.getOvertimePay() <= rule1.getEndWorkingHour()){
-                        rule = new RuleExecutor() {
+                        ruleExecutor = new RuleExecutor() {
                             public Double execute() {
-                                System.out.println("In CompanyA, EmployeeType is 1");
+                                System.out.println("In "+rule1.getCompany().getName()+" EmployeeType is "+rule1.getEmployeeType());
                                 return 0d;
                             }
                         };
                     }
                 }
 
-                //Conditions for a rule
+                //Conditions for a ruleExecutor
                 // How to execute it.
             }
         }
 
-        return rule;
+        return ruleExecutor;
     }
 }
