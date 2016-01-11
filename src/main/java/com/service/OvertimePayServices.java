@@ -1,6 +1,6 @@
 package com.service;
 
-import com.factory.RuleFactory;
+import com.factory.RuleEngine;
 import com.model.Employee;
 
 /**
@@ -8,14 +8,13 @@ import com.model.Employee;
  */
 public class OvertimePayServices {
 
-    private RuleFactory ruleFactory;
+    private RuleEngine ruleEngine;
 
-    public void setRuleFactory(RuleFactory ruleFactory) {
-        this.ruleFactory = ruleFactory;
+    public void setRuleEngine(RuleEngine ruleEngine) {
+        this.ruleEngine = ruleEngine;
     }
 
     public Double calculateRuleForEmployee(Employee employee){
-        RuleExecutor ruleExecutor = ruleFactory.getRuleExecutorForEmployee(employee);
-        return ruleExecutor.execute();
+        return ruleEngine.getRuleExecutionForEmployee(employee);
     }
 }
